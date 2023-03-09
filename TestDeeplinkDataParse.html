@@ -19,8 +19,16 @@
 
        branch.init('key_test_gg8566MrqImvXz2dGWOkwpinFymgiCSc', function(err, data) {
          console.log(data);
-         console.log("THis is the data " + data.$deeplink_path)
+         console.log("THis is the data " + data)
        });
+
+       var linkData = {
+
+         your_name: "Kun"
+
+       }
+
+       branch.setBranchViewData(linkData);
 
     </script>
 
