@@ -19,11 +19,13 @@
 
 
        branch.init('key_test_gg8566MrqImvXz2dGWOkwpinFymgiCSc', function(err, data) {
-         console.log(err,data);
+         console.log(data.data_parsed.your_name)
+
 
          branch.setBranchViewData({
            data: {
-             'your_name': data
+
+             'your_name': data.data_parsed.your_name
            }
          })
 
