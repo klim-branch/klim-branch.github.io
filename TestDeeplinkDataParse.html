@@ -20,14 +20,17 @@
 
        branch.init('key_test_gg8566MrqImvXz2dGWOkwpinFymgiCSc', function(err, data) {
          console.log(err,data);
+
+         branch.setBranchViewData({
+           data: {
+             'your_name': data
+           }
+         })
+
        });
 
 
-       branch.setBranchViewData({
-         data: {
-           'your_name': data
-         }
-       })
+
 
 
 
