@@ -9,6 +9,7 @@
 
     </center>
 
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>
        // load Branch
@@ -21,10 +22,19 @@
          console.log(err,data);
        });
 
-       <meta name="branch:deeplink:your_name" content="kun" />
-       <meta name="branch:deeplink:show" content="((Born this way))" />
+
+       branch.setBranchViewData({
+         data: {
+           'your_name': data
+         }
+       })
+
+
+
 
     </script>
+<!--    <meta name="branch:deeplink:your_name" content= />-->
+<!--    <meta name="branch:deeplink:show" content="((Born this way))" />-->
 
 
     <script>
