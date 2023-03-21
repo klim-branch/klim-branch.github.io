@@ -59,14 +59,15 @@
 
     <script>
 
-      branch.setBranchViewData(
-              {data:{'offer':'Offer_A'}}
+      branch.setBranchViewData({
+        data: {
+          '$Offer': 'stuff',
+        }
+      });
+      branch.closeJourney(function(err)
+      { console.log(err);
 
-
-
-      );
-
-
+        branch.track('pageview',{}); });
 
     </script>
 
