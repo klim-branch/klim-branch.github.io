@@ -8,8 +8,8 @@
     <script>
 
       var link = document.createElement('meta');
-      link.setAttribute('branch:deeplink:offer', 'Offer_A');
-      link.content = document.location;
+      link.name = 'branch:deeplink:offer';
+      link.content = 'Offer_A';
       document.getElementsByTagName('head')[0].appendChild(link);
 
 
