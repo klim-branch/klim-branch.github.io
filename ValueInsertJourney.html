@@ -59,29 +59,56 @@
 
     <script>
 
-      doesJourneyExistOnPage()
 
-      function doesJourneyExistOnPage() {
-        var elem = document.getElementById("branch-banner-iframe");
-        if (elem) {
-          ;
-        } else {
-          console.log("Closed now")
-          branch.track('pageview',{});
-        }
-      }
-
-
-        branch.setBranchViewData({
-        data: {
-          '$Offer': 'stuff',
-        }
+      branch.closeJourney();
+      branch.closeJourney(() => {
+        setTimeout(function(){
+          branch.track('pageview');
+          //
+          // To include targetting metadata:
+          // branch.track('pageview', {'key1':'value1','key2':'value2'});
+          //
+          // To include additional deeplink params:
+          // branch.setBranchViewData({
+          //    tags: ['tag1', 'tag2'],
+          //    data: {
+          //      mydata: 'something',
+          //      foo: 'bar',
+          //      '$deeplink_path': 'open/item/1234'
+          //    }
+          //  });
+        }, 1000);
       });
 
-      branch.closeJourney(function(err)
-      { console.log(err);
 
-        branch.track('pageview',{}); });
+
+
+      // branch.watch("branch-banner-iframe", doesJourneyExistOnPage())
+      //
+      //
+      //
+      //
+      // function doesJourneyExistOnPage() {
+      //   var elem = document.getElementById("branch-banner-iframe");
+      //   if (elem) {
+      //     console.log("It's open");
+      //   } else {
+      //     console.log("Closed now")
+      //     branch.track('pageview',{});
+      //   }
+      // }
+
+
+      //   branch.setBranchViewData({
+      //   data: {
+      //     '$Offer': 'stuff',
+      //   }
+      // });
+      //
+      // branch.closeJourney(function(err)
+      // { console.log(err);
+      //
+      //   branch.track('pageview',{}); });
 
     </script>
 
