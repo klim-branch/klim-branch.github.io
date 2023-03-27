@@ -59,11 +59,23 @@
 
     <script>
 
-      branch.setBranchViewData({
+
+      function doesJourneyExistOnPage() {
+        var elem = document.getElementById("branch-banner-iframe");
+        if (elem) {
+          ;
+        } else {
+          branch.track('pageview',{});
+        }
+      }
+
+
+        branch.setBranchViewData({
         data: {
           '$Offer': 'stuff',
         }
       });
+
       branch.closeJourney(function(err)
       { console.log(err);
 
