@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!--    <meta name="branch:deeplink:offer" content="Offer_A"/>-->
 
+    <style type="text/css">.branch-banner-no-scroll {overflow: hidden;}</style>
     <script>
 
       var link = document.createElement('meta');
@@ -59,45 +60,8 @@
 
     <script>
 
-
-      branch.closeJourney();
-      branch.closeJourney(() => {
-        setTimeout(function(){
-          branch.track('pageview');
-          //
-          // To include targetting metadata:
-          // branch.track('pageview', {'key1':'value1','key2':'value2'});
-          //
-          // To include additional deeplink params:
-          // branch.setBranchViewData({
-          //    tags: ['tag1', 'tag2'],
-          //    data: {
-          //      mydata: 'something',
-          //      foo: 'bar',
-          //      '$deeplink_path': 'open/item/1234'
-          //    }
-          //  });
-        }, 1000);
-      });
-
-
-
-
-      // branch.watch("branch-banner-iframe", doesJourneyExistOnPage())
-      //
-      //
-      //
-      //
-      // function doesJourneyExistOnPage() {
-      //   var elem = document.getElementById("branch-banner-iframe");
-      //   if (elem) {
-      //     console.log("It's open");
-      //   } else {
-      //     console.log("Closed now")
-      //     branch.track('pageview',{});
-      //   }
-      // }
-
+      setTimeout(function(){
+        branch.closeJourney(function(err) { console.log(err)}),1000});
 
       //   branch.setBranchViewData({
       //   data: {
