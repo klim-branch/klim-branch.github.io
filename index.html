@@ -1,69 +1,211 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Kun Branch TestBed</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en">
+<head>
 
-    <script>
-      // load Branch
-      (function(b,r,a,n,c,h,_,s,d,k){if(!b[n]||!b[n]._q){for(;s<_.length;)c(h,_[s++]);d=r.createElement(a);d.async=1;d.src="https://cdn.branch.io/branch-latest.min.js";k=r.getElementsByTagName(a)[0];k.parentNode.insertBefore(d,k);b[n]=h}})(window,document,"script","branch",function(b,r){b[r]=function(){b._q.push([r,arguments])}},{_q:[],_v:1},"addListener applyCode autoAppIndex banner closeBanner closeJourney creditHistory credits data deepview deepviewCta first getCode init link logout redeem referrals removeListener sendSMS setBranchViewData setIdentity track validateCode trackCommerceEvent logEvent disableTracking qrCode".split(" "), 0);
-      // init Branch
-      //branch.init('key_test_gg8566MrqImvXz2dGWOkwpinFymgiCSc');
+  <title>Kun Branch TestBed</title>
 
-      branch.init('key_live_mo8474PtvIkwXvWhRXrtEpmaFEmpaFwY', function(err, data) {
-        console.log(err, data);
-      });
+  <script>
+    // load Branch
+    (function(b,r,a,n,c,h,_,s,d,k){if(!b[n]||!b[n]._q){for(;s<_.length;)c(h,_[s++]);d=r.createElement(a);d.async=1;d.src="https://cdn.branch.io/branch-latest.min.js";k=r.getElementsByTagName(a)[0];k.parentNode.insertBefore(d,k);b[n]=h}})(window,document,"script","branch",function(b,r){b[r]=function(){b._q.push([r,arguments])}},{_q:[],_v:1},"addListener applyCode autoAppIndex banner closeBanner closeJourney creditHistory credits data deepview deepviewCta first getCode init link logout redeem referrals removeListener sendSMS setBranchViewData setIdentity track validateCode trackCommerceEvent logEvent disableTracking qrCode".split(" "), 0);
+    // init Branch
+    //branch.init('key_test_gg8566MrqImvXz2dGWOkwpinFymgiCSc');
 
-    </script>
-  <body>
+    branch.init('key_live_mo8474PtvIkwXvWhRXrtEpmaFEmpaFwY', function(err, data) {
+      console.log(err, data);
+    });
 
-  <center>
-    <h1> Kun's Branch TestBed - this is in Live Mod</h1>
-    <br>
-    <br>
-    <a href="TestEnv.html">To Test env</a>
-    <br>
-    <a href="TestDeeplinkDataParse.html">To Deeplink data parse test</a>
-    <br>
-    <a href="ValueInsertJourney.html">Value Insert Testing</a>
-    <br>
-    <a href="https://kun.app.link/GenericTesting"> Generic testing link CTA testing Link: https://kun.app.link/GenericTesting </a>
-    <br>
+  </script>
 
-    <br>
-    <a href="https://telstra.app.link/accountcontacts"> Telstra link CTA testing Link: https://telstra.app.link/accountcontacts </a>
-    <br>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
 
-        <br>
-    <a href="https://fwrir.app.link/xk4iKNwpuCb?%243p=a_naver
-"> Woori Bank Testing Link: https://fwrir.app.link/xk4iKNwpuCb?%243p=a_naver
- </a>
-    <br>
+    header {
+      background-color: #eee;
+      padding: 10px;
+      position: fixed;
+      width: 100%;
+      z-index: 1001;
+      top: 0; /* Adjust as needed */
+    }
 
+    nav {
+      background-color: #333;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      position: fixed;
+      width: 100%;
+      top: 140px; /* Adjusted to accommodate the header */
+      z-index: 1000;
+    }
 
-    <br>
-    <a href="https://kunbranchreact.app.link/GenericLink"> React Native Testing: https://kunbranchreact.app.link/GenericLink
- Generic Link </a>
-    <br>
-    <br>
-    <br>
-    <button onclick="CommerceEvent()">Commerce event</button>
+    nav a {
+      text-decoration: none;
+      color: white;
+      margin: 0 15px;
+    }
 
+    #menu-icon {
+      display: none;
+      cursor: pointer;
+    }
 
-
-    </center>
-
-  </body>
-
-    <script>
-
-      function CommerceEvent(){
-
-        alert("Just bought shoes");
+    @media only screen and (max-width: 600px) {
+      nav a {
+        display: block;
+        margin: 10px 0;
       }
 
-    </script>
+      #menu {
+        display: none;
+      }
 
+      #menu-icon {
+        display: block;
+      }
+    }
+
+    /* Added padding for the main content */
+    main {
+      padding-top: 200px; /* Adjusted based on the header and navigation bar heights */
+      text-align: center;
+    }
+
+    table {
+      margin: 0 auto; /* Center-align the table within the main element */
+    }
+
+  </style>
+</head>
+<body>
+
+<div>
+  <header>
+    <h1>Kun Branch TestBed</h1>
+    <h4> This page is in Live key</h4>
+  </header>
+</div>
+
+
+<nav>
+  <div id="menu-icon">&#9776;</div>
+  <div id="menu">
+    <a href="TestEnv.html">Test Env</a>
+    <a href="TestDeeplinkDataParse.html">Deeplink Data Parse</a>
+    <a href="ValueInsertJourney.html">Value Inserting</a>
+    <a href="#">Event trigger</a>
+  </div>
+</nav>
+
+<main>
+  <div align="center">
+<!--      <h2> Testbed Redirection </h2>
+      <table border="1">
+        <tr>
+          <th>Pages</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td><a href="TestEnv.html">Test Env</a></td>
+          <td> Going to the testing environment</td>
+        </tr>
+        <tr>
+          <td><a href="TestDeeplinkDataParse.html">To Deeplink data parse test</a></td>
+          <td>To Deeplink data parse test</td>
+        </tr>
+        <tr>
+          <td><a href="ValueInsertJourney.html">Value Insert Testing</a></td>
+          <td>Value Insert Testing</td>
+        </tr>
+      </table>
+    </div>-->
+
+    <div>
+      <h2> Link Testing </h2>
+      <table border="1">
+        <tr>
+          <th>Description</th>
+          <th>Link inscribed</th>
+        </tr>
+
+        <tr>
+          <td><a href="https://kun.app.link/GenericTesting">Generic testing link CTA testing Link</a></td>
+          <td>https://kun.app.link/GenericTesting</td>
+        </tr>
+
+        <tr>
+          <td><a href="https://telstra.app.link/accountcontacts">Telstra link CTA testing Link</a></td>
+          <td>https://telstra.app.link/accountcontacts</td>
+        </tr>
+
+        <tr>
+          <td><a href="ValueInsertJourney.html">Value Insert Testing</a></td>
+          <td>Value Insert Testing</td>
+        </tr>
+
+        <tr>
+          <td><a href="https://fwrir.app.link/xk4iKNwpuCb?%243p=a_naver"> Woori Bank Testing Link</a></td>
+          <td>https://fwrir.app.link/xk4iKNwpuCb?%243p=a_naver</td>
+        </tr>
+
+        <tr>
+          <td><a href="https://kunbranchreact.app.link/GenericLink"> React Native Testing</a></td>
+          <td>https://kunbranchreact.app.link/GenericLink</td>
+        </tr>
+      </table>
+    </div>
+
+    <div>
+      <h2> Setting Developer ID </h2>
+      <table border="1">
+        <tr>
+          <td> <button onclick="SetDeveloperIdentityEvent()">Set your Identity</button> </td>
+          <td>
+            <form>
+              <label for="devId">ID:</label><br>
+              <input type="text" id="devId" name="devId"><br>
+            </form>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</main>
+
+<script>
+  document.getElementById('menu-icon').addEventListener('click', function() {
+    var menu = document.getElementById('menu');
+    menu.style.display = (menu.style.display === 'block' ? 'none' : 'block');
+  });
+</script>
+
+<script>
+
+  function SetDeveloperIdentityEvent(){
+
+    var userIdentity = document.getElementById('devId');
+
+    if (userIdentity){
+      branch.setIdentity(userIdentity.value);
+      alert("the developer identity has been set as:" + userIdentity.value )
+    }
+    else{
+      alert("No input found from devId")
+    }
+
+
+  }
+
+
+</script>
+
+
+
+</body>
 </html>
-
-
