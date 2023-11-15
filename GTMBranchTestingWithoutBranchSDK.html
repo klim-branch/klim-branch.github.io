@@ -10,7 +10,14 @@
   })(window,document,'script','dataLayer','GTM-MH4LN5V8');</script>
   <!-- End Google Tag Manager -->
 
-  <title>Kun Branch GTM testing</title>
+  <script>
+    // load Branch
+    (function(b,r,a,n,c,h,_,s,d,k){if(!b[n]||!b[n]._q){for(;s<_.length;)c(h,_[s++]);d=r.createElement(a);d.async=1;d.src="https://cdn.branch.io/branch-latest.min.js";k=r.getElementsByTagName(a)[0];k.parentNode.insertBefore(d,k);b[n]=h}})(window,document,"script","branch",function(b,r){b[r]=function(){b._q.push([r,arguments])}},{_q:[],_v:1},"addListener banner closeBanner closeJourney data deepview deepviewCta first init link logout removeListener setBranchViewData setIdentity track trackCommerceEvent logEvent disableTracking getBrowserFingerprintId crossPlatformIds lastAttributedTouchData setAPIResponseCallback qrCode".split(" "), 0);
+    // init Branch
+    branch.init('key_live_mo8474PtvIkwXvWhRXrtEpmaFEmpaFwY'); // Change `key_live_YOUR_KEY_GOES_HERE` to match your Branch Dashboard
+  </script>
+
+  <title>Kun Branch GTM testing separate Branch SDK</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -88,8 +95,8 @@
 
 <div>
   <header>
-    <h1>Kun Branch GTM TestBed</h1>
-    <h4> This page is in Live key</h4>
+    <h1>Kun Branch GTM JobPlanet</h1>
+    <h4> This page is in Live key. Testing behalf of JobPlanet Integration</h4>
   </header>
 </div>
 
@@ -103,13 +110,26 @@
     <a href="ValueInsertJourney.html">Value Inserting</a>
     <a href="#">Event trigger</a>
     <a href="GTMBranchTesting.html">GTM Testing</a>
+    <a href="GTMBranchTestingWithoutBranchSDK.html">GTM Testing Separate Branch SDK</a>
   </div>
 </nav>
 
 
 
 <main>
-  <a href="#" name="button1" onclick="dataLayer.push({'event': 'addToCart'});">Button 1</a>
+
+  Clicking the below link will generate custom event with the event name: "AddToCart"
+  <br>
+  <br>
+  <br>
+  <br>
+
+
+  <a href="#" name="button1" onclick="dataLayer.push({'event': 'addToCart'});">Custom Event: Add To Cart</a>
+  <br>
+  <br>
+  <a href="#" name="button2" onclick="dataLayer.push({'event': 'purchaseEvent'});">Purchase Event</a>
+
 </main>
 
 
