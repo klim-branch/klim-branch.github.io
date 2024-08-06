@@ -1,0 +1,80 @@
+<html>
+
+<head>
+    <style type="text/css" id="branch-css">
+        #branch-banner .branch-banner-button-container {
+            padding: 10px 0;
+            border-radius: 50px;
+            color: #FFF;
+            background: #ff5a5f;
+            text-align: center;
+            letter-spacing: 1.15px;
+            position: relative;
+            left: 50%;
+            transform: translate(-50%, 50%);
+            -webkit-transform: translate(-50%, 50%);
+            -ms-transform: translate(-50%, 50%);
+            display: inline-block;
+        }
+
+        #branch-banner .branch-banner-button {
+            padding: 10px 20px 10px 20px;
+            text-align: center;
+            line-height: 19px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        #branch-banner .branch-banner-close {
+            padding: 7px 0px 10px 15px;
+            font-size: 20px;
+            line-height: 0px;
+            cursor: pointer;
+            border-left: 1px solid white;
+            z-index: 1;
+        }
+
+        #branch-banner .branch-banner-content {
+            height: 76px;
+        }
+
+        #branch-banner {
+            font-family: 'Open Sans', sans-serif;
+            width: 100%;
+            z-index: 99999;
+            -webkit-font-smoothing: antialiased;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+            -webkit-transition: all 0.25s ease;
+            transition: all 00.25s ease;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            line-height: normal;
+        }
+    </style>
+</head>
+
+<body>
+<div data-id=1 data-id="1" src="about:blank" scrolling="no" id="branch-banner-iframe" class="branch-animation">
+    <div data-id=2 data-id="2" id="branch-banner" class="branch-animation">
+        <div class="branch-banner-content">
+            <div class="branch-banner-button-container branch-banner-button"><span class="branch-banner-button" id="branch-mobile-action" role="text" aria-label="App Download or Open Button" tabindex="0">{{$journeys_button_get_has_app}}</span><span id="branch-banner-close1" class="branch-banner-close" role="text" aria-label="Close banner" tabindex="0">&times</span> </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    (function(w, d) {
+        function onClose(ev) { w.location.href = 'branch-cta://cancel';
+            ev.preventDefault(); }
+
+        function onAccept(ev) { w.location.href = 'branch-cta://accept';
+            ev.preventDefault(); }; var btnClose = d.getElementById('branch-banner-close1'); if (btnClose) { btnClose.onclick = onClose; } var btnClose = d.getElementById('branch-banner-close2'); if (btnClose) { btnClose.onclick = onClose; } var btnAccept = d.getElementById('branch-mobile-action'); if (btnAccept) { btnAccept.onclick = onAccept } })(window, document);
+</script>
+<script type="application/json">
+    { "language": { "$journeys_button_get_has_app": "Open in app", "$journeys_button_get_no_app": "GET", "$journeys_description": "Description", "$journeys_icon_image_url": "https://cdn.branch.io/branch-assets/1469135837653-icon.png", "$journeys_title": "Title", "$journeys_reviews": "(1,345)" }, "bannerHeight": "76px", "position": "bottom", "sticky": "fixed", "ctaText": { "has_app": "{{$journeys_button_get_has_app}}", "no_app": "{{$journeys_button_get_no_app}}" } }
+</script>
+</body>
+
+</html>
