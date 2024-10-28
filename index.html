@@ -142,7 +142,19 @@
         </tr>
 
         <tr>
-          <td><a href="branchkuntest://"> URI scheme to the application, This is for android. iOS is different</a></td>
+          <td>
+            <a href="#" onclick="openApp()">URI scheme to the application, This is for Android. iOS is different</a>
+            <script>
+              function openApp() {
+                // Attempt to open the app with the URI scheme
+                window.location.href = "branchkuntest://";
+                // Set a fallback after a delay in case it fails
+                setTimeout(function() {
+                  window.location.href = "https://yourappdownload.com"; // Your fallback URL
+                }, 2000);
+              }
+            </script>
+          </td>
           <td>branchkuntest://</td>
         </tr>
 
